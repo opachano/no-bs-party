@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+    {{#if logout}}
+    <div class="alert alert-success logout" role="alert">
+    {{logout}}
+    </div>
+    {{/if}}
+    <main role="main" class="inner cover indexDiv">
+
+      <img class="img-fluid mainLogo" src="/images/nobsnobackground.png" alt="no bullshit logo">
+      <h1 class="cover-heading">Welcome to {{title}}</h1>
+      <p class="lead">This is the social media platform for facts! Enjoy it to your hearts content, be as respectful of other as you can and remember... NO BS!</p>
+      <p class="lead">
+        {{#if user}}
+        {{else}}
+        <a href="/user/signup" class="btn btn-lg btn-secondary">Sign Up</a>
+        {{/if}}
+      </p>
+    </main>

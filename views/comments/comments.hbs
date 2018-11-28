@@ -1,0 +1,10 @@
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+{{#each post.comments}}
+<h2>{{this.user}}</h2>
+<p>{{this.content}}</p>
+{{#if this.currentUser}}
+<a href="/comment/{{this._id}}/edit">Edit Comment</a>
+<form action="/comment/{{this._id}}/delete" method="POST"><button>Delete Comment</button></form>
+{{/if}}
+{{/each}}

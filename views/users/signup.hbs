@@ -1,0 +1,22 @@
+<head>
+   <link href="/stylesheets/signin.css" rel="stylesheet">
+</head>
+
+<form class="form-signin" action="/user/signup" method="POST">
+  <img class="img-fluid mainLogo" src="/images/nobsnobackground.png" alt="no bullshit logo">
+  <h1 class="h3 mb-3 font-weight-normal">Please Sign Up</h1>
+  <label class="sr-only">Username: </label>
+  <input  class="form-control" type="text" name="username" placeholder="Username" required autofocus>
+  <label class="sr-only">Password: </label>
+  <input  class="form-control" type="password" name="password" placeholder="Password" required>
+  <label class="sr-only">Confirm Password: </label>
+  <input  class="form-control" type="password" placeholder="Confirm Password" name="confirmPassword">
+  <label class="sr-only">Email: </label>
+  <input  class="form-control" type="email" placeholder="Email" name="email" required>
+  <label class="sr-only">First Name: </label>
+  <input  class="form-control" type="text" placeholder="First Name" name="firstName" required>
+  <label class="sr-only">Last Name: </label>
+  <input  class="form-control" type="text" placeholder="Last Name" name="lastName" required>
+  <button class="btn btn-lg btn-secondary" type="submit">Sign Up</button>
+  <p class="mt-5 mb-3 text-muted">&copy;2018</p>
+</form>

@@ -1,0 +1,9 @@
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+<img src="{{post.image}}" alt="">
+<p>Likes: <span>{{post.likes.length}}</span></p>
+{{#each post.comment}}
+<h1>{{this.user}}</h1>
+<p>{{this.body}}</p>
+<p>Likes: <span>{{this.likes.length}}</span></p>
+{{/each}}

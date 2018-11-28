@@ -1,0 +1,156 @@
+.mainLogo {
+  margin-bottom: 30px; }
+
+.logout {
+  width: 55%;
+  margin: 0 auto;
+  margin-bottom: 20px; }
+
+.navlogo:hover {
+  text-decoration: none; }
+
+body {
+  min-height: 100vh; }
+
+.mastfoot {
+  width: 100vw;
+  background-color: #011319;
+  position: fixed;
+  left: 0;
+  bottom: 0; }
+
+.smallFoot {
+  display: none; }
+
+.mastfoot > div {
+  padding-top: 2vh; }
+
+.indexDiv {
+  margin-top: 20vh; }
+
+.postsMain {
+  background-color: #033F53;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5rem rgba(0, 0, 0, 0.5);
+  margin-top: 2vh;
+  padding-top: 2vh;
+  border-radius: 10px;
+  padding-bottom: 50px; }
+
+.postInfo {
+  display: flex;
+  justify-content: space-between; }
+
+.postInfo > .username {
+  display: flex;
+  font-size: 14px;
+  margin-left: 1vw; }
+
+.username > h3 {
+  font-size: 20px; }
+
+.username > p {
+  color: #bbb; }
+
+.postInfo > .firstName {
+  margin-left: 0px; }
+
+.postInfo > .lastName {
+  margin-left: 0px; }
+
+.postInfo > .date {
+  font-size: 12px;
+  width: 6vw; }
+
+.eachPost {
+  border-bottom: solid 5px #011319;
+  border-radius: 10px; }
+
+.postContent > p {
+  margin-top: 3%; }
+
+.postModify {
+  display: flex;
+  justify-content: flex-end; }
+
+.postModify button {
+  margin-right: 10px;
+  background-color: #012936;
+  color: #fff;
+  border: none;
+  border-radius: 5px; }
+
+.postModify button:hover {
+  background-color: #fff;
+  color: #012936; }
+
+.commentButton {
+  padding: 0 1%;
+  background-color: #6c757d;
+  color: #012936;
+  border: none;
+  margin: 1% auto; }
+
+.commentButton:hover {
+  background-color: #fff;
+  color: #012936;
+  border: none; }
+
+.commentTitle {
+  background-color: #012936;
+  color: #fff; }
+
+.commentBody {
+  background-color: #06526B;
+  text-align: left; }
+
+.commentFrame {
+  border-bottom: 2px solid #011319;
+  border-radius: 2px; }
+
+.commentFrame > h1 {
+  font-size: 20px; }
+
+.commentFrame > p {
+  font-size: 15px;
+  text-align: center; }
+
+.commentModify {
+  display: flex;
+  justify-content: center; }
+
+.commentModify button, .commentModify a {
+  margin-right: 10px;
+  background-color: #012936;
+  color: #fff;
+  border: none;
+  border-radius: 5px; }
+
+.commentModify a {
+  padding: 0 2%; }
+
+.commentModify button:hover, .commentModify a:hover {
+  background-color: #fff;
+  color: #012936;
+  text-decoration: none; }
+
+.commentFooter {
+  background-color: #012936; }
+
+@media only screen and (max-width: 600px) {
+  .indexDiv {
+    margin-top: 5vh; }
+  .postInfo {
+    justify-content: center; }
+  .firstName {
+    display: none; }
+  .lastName {
+    display: none; }
+  .postInfo > .date {
+    display: none; }
+  .bigFoot {
+    display: none; }
+  .smallFoot {
+    display: block; } }
+
+/*# sourceMappingURL=style.css.map */

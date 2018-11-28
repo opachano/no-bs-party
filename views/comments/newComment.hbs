@@ -1,0 +1,7 @@
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+<form action="/comment/{{post._id}}/new" method="POST">
+<label>Comment: </label>
+<textarea name="content" id="" cols="30" rows="10"></textarea>
+<button>Add Comment</button>
+</form>
