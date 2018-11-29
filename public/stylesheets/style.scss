@@ -12,6 +12,10 @@
   text-decoration: none;
 }
 
+button:hover {
+  cursor:pointer;
+}
+
 body {
   min-height: 100vh;
 }
@@ -167,6 +171,11 @@ body {
 
 .commentFooter {
   background-color: #012936;
+}
+
+#profilePic {
+  width: 25%;
+  height: 25%;
 }
 
 @media only screen and (max-width: 600px) {

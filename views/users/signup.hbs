@@ -2,7 +2,7 @@
    <link href="/stylesheets/signin.css" rel="stylesheet">
 </head>
 
-<form class="form-signin" action="/user/signup" method="POST">
+<form class="form-signin" action="/user/signup" method="POST" enctype="multipart/form-data">
   <img class="img-fluid mainLogo" src="/images/nobsnobackground.png" alt="no bullshit logo">
   <h1 class="h3 mb-3 font-weight-normal">Please Sign Up</h1>
   <label class="sr-only">Username: </label>
@@ -17,6 +17,8 @@
   <input  class="form-control" type="text" placeholder="First Name" name="firstName" required>
   <label class="sr-only">Last Name: </label>
   <input  class="form-control" type="text" placeholder="Last Name" name="lastName" required>
+  <label class="sr-only">Profile Image: </label>
+  <input  class="form-control" type="file" placeholder="Profile Picture" name="image">
   <button class="btn btn-lg btn-secondary" type="submit">Sign Up</button>
   <p class="mt-5 mb-3 text-muted">&copy;2018</p>
 </form>

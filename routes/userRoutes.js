@@ -1,14 +1,15 @@
-const express    = require("express");
-const router     = express.Router();
-const User       = require("../models/User");
-const bcrypt     = require("bcryptjs");
-const passport   = require("passport");
+const express     = require("express");
+const router      = express.Router();
+const User        = require("../models/User");
+const bcrypt      = require("bcryptjs");
+const passport    = require("passport");
+const uploadCloud = require("../config/cloudinary.js");
 
 router.get("/signup", (req, res, next) => {
   res.render("users/signup", {message: req.flash("error")});
 });
 
-router.post("/signup", (req, res, next) => {
+router.post("/signup", uploadCloud.single("image"), (req, res, next) => {
   if(req.body.password !== req.body.confirmPassword) {
     req.flash("error", "Password do not match")
     res.redirect("/user/signup");
@@ -31,7 +32,10 @@ router.post("/signup", (req, res, next) => {
         const salt     = bcrypt.genSaltSync(10);
         const hashPass = bcrypt.hashSync(req.body.password, salt);
         req.body.password = hashPass;
-        User.create(req.body)
+        const newUser = req.body;
+        console.log(req.file)
+        if(req.file) {newUser.image = req.file.url;}
+        User.create(newUser)
         .then((newUser)=>{
             req.login(newUser, (err) => {
               if(err) {

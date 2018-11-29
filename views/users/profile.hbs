@@ -1,11 +1,14 @@
+<div class="postsMain">
+<img id="profilePic" src="{{user.image}}" alt="">
 <h1>{{user.username}}</h1>
 <h1>{{user.firstName}}</h1>
 <h1>{{user.lastName}}</h1>
 <h1>{{user.email}}</h1>
 <h1>{{user.createdAt}}</h1>
-{{#if user.post}}
-{{#each user.post}}
+{{#if user.posts}}
+{{#each user.posts}}
 <h1>{{this.title}}</h1>
 <p>{{this.content}}</p>
 {{/each}}
 {{/if}}
+</di>
