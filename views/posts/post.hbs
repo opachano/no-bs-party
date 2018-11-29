@@ -20,7 +20,7 @@
       <p>{{this.content}}</p>
       {{#if this.currentUser}}
       <div class="postModify">
-        <form action="/post/{{this._id}}/edit" method="GET"><button>Edit</button>
+        <form action="/post/{{this._id}}/edit" method="GET"><button>Edit</button></form>
         <form action="/post/{{this._id}}/delete" method="POST"><button>Delete</button></form>
       </div>
       {{/if}}
