@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/bootstrap.css">
-  <link href="/stylesheets/cover.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/cover.css">
   <link rel="stylesheet" href="/stylesheets/all.css" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
@@ -30,10 +30,14 @@
     </div>
   </header>
     
-  {{{body}}}
   {{#if message}}
+  <div class="alert alert-danger message" role="alert">
   {{message}}
+  </div>
   {{/if}}
+  
+  {{{body}}}
+  
    <footer class="mastfoot mt-auto">
       <div class="inner">
         <p class="smallFoot"><a href="https://github.com/opachano" target="_blank">GitHub</a> or  <a href="https://www.linkedin.com/in/opachano/" target="_blank">LinkedIn</a></p>
@@ -42,6 +46,7 @@
     </footer>
   </div>
   <script src="/javascripts/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <script src="/javascripts/bootstrap.bundle.js"></script>
   <script src="/javascripts/script.js"></script>
 </body>

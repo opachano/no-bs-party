@@ -3,9 +3,17 @@
 }
 
 .logout{
-  width: 55%;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  width: 20vw;
+  position: absolute;
+  left: 40vw;
+  top: 10vh;
+}
+
+.message{
+  width: 20vw;
+  position: absolute;
+  left: 40vw;
+  top: 10vh;
 }
 
 .navlogo:hover{
@@ -228,6 +236,15 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 1vh;
+}
+
+.editProf {
+  margin-top: 2vh;
+}
+
+#formEdit {
+  margin-top: 1vh; 
+  width: 25vw;
 }
 
 @media only screen and (max-width: 600px) {

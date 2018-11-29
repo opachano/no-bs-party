@@ -42,7 +42,7 @@ router.post("/signup", uploadCloud.single("image"), (req, res, next) => {
                 res.redirect("/user/signup");
                 return
               }
-              res.redirect(`/user/${req.user._id}/profile`);
+              res.redirect(`/user/${newUser._id}/profile`);
             });
         })
         .catch((err)=>{
@@ -83,6 +83,35 @@ router.get("/:id/profile", (req, res, next) => {
   })
   .catch((err)=>{
     next(err);
+  })
+})
+
+router.get("/:id/edit", (req, res, next) => {
+  User.findById(req.params.id)
+  .then((user)=>{
+    if(!req.user._id.equals(user._id)){
+      req.logout();
+      req.flash("error", "Tried to access incorrect profile, please log in and try again.")
+      res.redirect("/user/login");
+      return
+    }
+    user.date = user.createdAt.toLocaleDateString("en-US");
+    res.render("users/editProfile", {user})
+  })
+  .catch((err)=>{
+    next(err);
+  })
+})
+
+router.post("/:id/edit", uploadCloud.single("image"), (req, res, next) => {
+  const updatedUser = req.body;
+  if(req.file) {updatedUser.image = req.file.url;}
+  User.findByIdAndUpdate(req.params.id, updatedUser)
+  .then((user)=>{
+    res.redirect(`/user/${user._id}/profile`);
+  })
+  .catch((err)=>{
+    next(err)
   })
 })
 

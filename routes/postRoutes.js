@@ -142,7 +142,6 @@ router.post("/:id/delete",(req, res, next)=>{
 
 router.post("/:id/like", (req, res, next)=>{
   if(!req.user) {
-    res.redirect("/post/all")
     return
   }
   Post.findById(req.params.id)
@@ -150,13 +149,16 @@ router.post("/:id/like", (req, res, next)=>{
     if(post.likes.indexOf(req.user._id) !== -1){
       let likeIndex = post.likes.indexOf(req.user._id);
       post.likes.splice(likeIndex, 1)
-      post.save()
-      res.redirect("/post/all")
     } else {
       post.likes.push(req.user._id)
-      post.save()
-      res.redirect("/post/all")
     }
+    post.save()
+    .then((updatedPost)=>{
+      res.json(updatedPost)
+    })
+    .catch((err)=>{
+      res.json(err)
+    })
   })
   .catch((err)=>{
     next(err)

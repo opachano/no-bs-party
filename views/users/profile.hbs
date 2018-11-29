@@ -1,3 +1,7 @@
+<head>
+   <link href="/stylesheets/signin.css" rel="stylesheet">
+</head>
+
 <div class="postsMain">
   {{#if user.image}}
   <img id="profilePic" src="{{user.image}}" alt="">
@@ -8,11 +12,6 @@
     <div class="profileItems"><h1>Last Name:</h1> <h2>{{user.lastName}}</h2></div>
     <div class="profileItems"><h1>Email:</h1> <h2>{{user.email}}</h2></div>
     <div class="profileItems"><h1>Member Since:</h1> <h2>{{user.date}}</h2></div>
+    <a href="/user/{{user._id}}/edit" class="btn btn-lg btn-secondary">Edit Profile</a>
   </div>
-  {{#if user.posts}}
-  {{#each user.posts}}
-  <h1>{{this.title}}</h1>
-  <p>{{this.content}}</p>
-  {{/each}}
-  {{/if}}
 </div>
