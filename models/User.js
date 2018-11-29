@@ -7,7 +7,7 @@ const userSchema = new Schema({
   email: {type: String, lowercase: true, required: true},
   firstName: String,
   lastName: String,
-  image: String,
+  image: {type: String, default: "/images/default-profile.png"},
   confirmed: {type: Boolean, default: false},
   admin: {type: Boolean, default: false},
   posts:[{type: Schema.Types.ObjectId, ref: "Post", default:[]}],

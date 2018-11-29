@@ -1,5 +1,7 @@
 <div class="postsMain">
+  {{#if user.image}}
   <img id="profilePic" src="{{user.image}}" alt="">
+  {{/if}}
   <div id="profileInfo">
     <div class="profileItems"><h1>Username:</h1> <h2>@{{user.username}}</h2></div>
     <div class="profileItems"><h1>First Name:</h1> <h2>{{user.firstName}}</h2></div>
