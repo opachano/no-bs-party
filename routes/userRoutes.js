@@ -33,7 +33,6 @@ router.post("/signup", uploadCloud.single("image"), (req, res, next) => {
         const hashPass = bcrypt.hashSync(req.body.password, salt);
         req.body.password = hashPass;
         const newUser = req.body;
-        console.log(req.file)
         if(req.file) {newUser.image = req.file.url;}
         User.create(newUser)
         .then((newUser)=>{
@@ -79,6 +78,7 @@ router.get("/:id/profile", (req, res, next) => {
       res.redirect("/user/login");
       return
     }
+    user.date = user.createdAt.toLocaleDateString("en-US");
     res.render("users/profile", {user})
   })
   .catch((err)=>{

@@ -14,9 +14,9 @@
       <span class="date">{{this.date}}</span>
     </div>
     <div class="postContent">
-      <p>{{this.content}}</p>
       <img src="{{this.image}}" alt="">
-      <span>Likes: {{this.likes.length}}</span>
+      <p>{{this.content}}</p>
+      <p>Likes: {{this.likes.length}}</p>
       {{#if this.currentUser}}
       <div class="postModify">
         <form action="/post/{{this._id}}/edit" method="GET"><button>Edit</button></>

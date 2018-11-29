@@ -141,8 +141,28 @@ body {
   background-color: #012936; }
 
 #profilePic {
-  width: 25%;
-  height: 25%; }
+  width: 30%;
+  max-width: 300px;
+  height: 30%;
+  max-height: 300px;
+  border-radius: 50%;
+  border: 5px solid #011319;
+  box-shadow: 0px 0px 5px 5px rgba(30, 30, 30, 0.5); }
+
+#profileInfo {
+  text-align: center; }
+
+#profileInfo h1 {
+  color: #8c959d;
+  font-size: 5vh; }
+
+#profileInfo h2 {
+  margin-left: 1vw;
+  font-size: 4vh; }
+
+.profileItems {
+  display: flex;
+  justify-content: center; }
 
 @media only screen and (max-width: 600px) {
   .indexDiv {

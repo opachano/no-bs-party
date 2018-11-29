@@ -3,18 +3,21 @@ const router      = express.Router();
 const User       = require("../models/User");
 const Post       = require("../models/Post");
 const Comment     = require("../models/Comment");
+const uploadCloud = require("../config/cloudinary.js");
 
 router.get("/new", (req, res, next) => {
   res.render("posts/newPost", {message: req.flash("error")});
 });
 
-router.post("/new", (req, res, next)  => {
+router.post("/new", uploadCloud.single("image"), (req, res, next)  => {
   if(!req.user) {
     req.flash("error", "You need to be logged in to post.");
     res.redirect("/user/login");
   }
   req.body.user = req.user._id;
-  Post.create(req.body)
+  const newPost = req.body;
+  if(req.file) {newPost.image = req.file.url;}
+  Post.create(newPost)
   .then((post)=>{
     User.findByIdAndUpdate(post.user, {$push: {posts: post._id}})
     .then(()=>{
