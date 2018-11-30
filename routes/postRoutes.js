@@ -51,8 +51,11 @@ router.get("/all", (req, res, next) => {
     }
     posts.forEach((post)=>{
       post.date = post.createdAt.toLocaleDateString("en-US")
+      post.comments.forEach((comment)=>{
+        comment.date = comment.createdAt.toLocaleDateString("en-US")
+      })
     })
-
+    
     res.render("posts/post", {post: posts, message: req.flash("error")})
   })
   .catch((err)=>{

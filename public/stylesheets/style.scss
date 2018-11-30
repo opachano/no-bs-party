@@ -4,14 +4,14 @@
 
 .logout{
   width: 20vw;
-  position: absolute;
+  position: fixed;
   left: 40vw;
   top: 10vh;
 }
 
 .message{
   width: 20vw;
-  position: absolute;
+  position: fixed;
   left: 40vw;
   top: 10vh;
 }
@@ -165,7 +165,16 @@ body {
   border-radius: 2px;
 }
 
-.commentFrame > h1 {
+.commentTop {
+  display: flex;
+  justify-content: space-between
+}
+
+.commentTop > span {
+  font-size: 1.5vh;
+}
+
+.commentFrame > div > h1 {
   font-size: 20px;
 }
 
@@ -262,6 +271,18 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .logout{
+    width: 85vw;
+  }
+  
+  .message{
+    width: 85vw;
+  }
+
+  #formEdit { 
+    width: 90vw;
+  }
+  
   .indexDiv{
     margin-top: 5vh;
   }

@@ -51,7 +51,7 @@
       <div class="modal-body commentBody">
   {{#each this.comments}}
         <div class="commentFrame">
-          <h1>@{{this.user}}</h1>
+          <div class="commentTop"><h1>@{{this.user}}</h1><span>{{this.date}}</span></div>
           <p>{{this.content}}</p>
           <div class="commentModify">
           {{#if this.currentUser}}
