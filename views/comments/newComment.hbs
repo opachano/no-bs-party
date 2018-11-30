@@ -1,10 +1,27 @@
   
 <div class="postsMain">
-  <h1>{{post.title}}</h1>
-  <p>{{post.content}}</p>
-  <form action="/comment/{{post._id}}/new" method="POST">
-    <label>Comment: </>
-    <textarea name="content" id="" cols="30" rows="10"></textarea>
-    <button>Add Comment</button>
+<div class="eachPost">
+    <div class="postInfo">
+      <div class="username" >
+        <h3>{{post.title}}</h3>
+        <p>@{{post.user.username}}</p>
+      </div>
+      <div class="name">
+        <span class="firstName">{{post.user.firstName}}</span>
+        <span class="lastName">{{post.user.lastName}}</span>
+      </div>
+      <span class="date">{{post.date}}</span>
+    </div>
+    <div class="postContent">
+      {{#if post.image}}
+      <img class="postImage" src="{{this.image}}" alt="">
+      {{/if}}
+      <p>{{post.content}}</p>
+    </div>
+  </div>
+  <form class="form-signin" id="formEdit" action="/comment/{{post._id}}/new" method="POST">
+    <label class="postLabel">Comment: </label>
+    <textarea class="form-control" name="content" id="" cols="30" rows="10"></textarea>
+    <button class="btn btn-lg btn-secondary">Add Comment</button>
   </form>
 </div>

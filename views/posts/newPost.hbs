@@ -4,15 +4,15 @@
 <div class="postsMain">
     <h1>Create New Post</h1>
 
-  <form class="form-signin" action="/post/new" method="POST" enctype="multipart/form-data">
-    <label>Post Title:</label>
-    <input type="text" name="title">
-    <label>Content: </label>
-    <textarea name="content" id="" cols="30" rows="10"></textarea>
+  <form class="form-signin" id="formEdit" action="/post/new" method="POST" enctype="multipart/form-data">
+    <label class="postLabel">Post Title:</label>
+    <input class="form-control" type="text" name="title">
+    <label class="postLabel">Content: </label>
+    <textarea class="form-control" name="content" id="" cols="30" rows="10"></textarea>
     <div id="postAddImg">
-      <label for="">Add Image:</label>
+      <label class="postLabel" for="">Add Image:</label>
       <input type="file" name="image">
     </div>
-    <button>New Post</button>
+    <button class="btn btn-lg btn-secondary">New Post</button>
   </form>
 </div>

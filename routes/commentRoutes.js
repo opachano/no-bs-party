@@ -9,7 +9,7 @@ router.get("/:id/new", (req, res, next)=>{
     res.redirect("/user/login");
     return
   }
-  Post.findById(req.params.id)
+  Post.findById(req.params.id).populate("user")
   .then((post)=>{
     res.render("comments/newComment", {post});
   })
@@ -110,6 +110,30 @@ router.get("/:id/all", (req, res, next)=>{
   })
 })
 
+router.post("/:id/like", (req, res, next)=>{
+  if(!req.user) {
+    return
+  }
+  Comment.findById(req.params.id)
+  .then((comment)=>{
+    if(comment.likes.indexOf(req.user._id) !== -1){
+      let likeIndex = comment.likes.indexOf(req.user._id);
+      comment.likes.splice(likeIndex, 1)
+    } else {
+      comment.likes.push(req.user._id)
+    }
+    comment.save()
+    .then((updatedComment)=>{
+      res.json(updatedComment)
+    })
+    .catch((err)=>{
+      res.json(err)
+    })
+  })
+  .catch((err)=>{
+    next(err)
+  })
+})
 
 
 

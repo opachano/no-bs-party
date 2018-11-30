@@ -247,6 +247,20 @@ body {
   width: 25vw;
 }
 
+.postLabel {
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+  font-size: 3vh;
+}
+
+.form-signin {
+  margin: auto;
+}
+
+.btn-secondary {
+  margin-top: 1vh;
+}
+
 @media only screen and (max-width: 600px) {
   .indexDiv{
     margin-top: 5vh;

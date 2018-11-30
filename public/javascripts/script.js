@@ -7,10 +7,21 @@ $(document).ready(function() {
     $(".alert-danger").slideUp(500);
   });
 
-  $(".like").click(function(){
+  $(".postLike").click(function(){
     axios.post(`/post/${$(this).data("id")}/like`)
     .then((updatedPost)=>{
       const likes = updatedPost.data.likes.length;
+      $(this).find("span").html(likes);
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  })
+
+  $(".commentLike").click(function(){
+    axios.post(`/comment/${$(this).data("od")}/like`)
+    .then((updatedComment)=>{
+      const likes = updatedComment.data.likes.length;
       $(this).find("span").html(likes);
     })
     .catch((err)=>{

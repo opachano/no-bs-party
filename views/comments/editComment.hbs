@@ -1,6 +1,8 @@
-<h1>Edit comment</h1>
-<form action="/comment/{{comment._id}}/edit" method="POST">
-<label>Comment: </label>
-<textarea name="content" id="" cols="30" rows="10">{{comment.content}}</textarea>
-<button>Edit Comment</button>
-</form>
+<div class="postsMain">
+  <h1>Edit comment</h1>
+  <form class="form-signin" id="formEdit" action="/comment/{{comment._id}}/edit" method="POST">
+  <label class="postLabel">Comment: </label>
+  <textarea class="form-control" name="content" id="" cols="30" rows="10">{{comment.content}}</textarea>
+  <button class="btn btn-lg btn-secondary">Edit Comment</button>
+  </form>
+</div>

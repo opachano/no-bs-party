@@ -35,7 +35,7 @@
     Comments: {{this.comments.length}}
   </button>
   {{!-- <form action="/post/{{this._id}}/like" method="POST"> --}}
-  <button data-id="{{this._id}}" class="btn btn-primary commentButton like"><i class="fa fa-heart" aria-hidden="true"></i><span>{{this.likes.length}}</span></button>
+  <button data-id="{{this._id}}" class="btn btn-primary commentButton postLike"><i class="fa fa-heart" aria-hidden="true"></i><span>{{this.likes.length}}</span></button>
   {{!-- </form> --}}
 </div>
 <!-- Modal -->
@@ -59,7 +59,7 @@
           <form action="/comment/{{this._id}}/delete" method="POST"><button>Delete</button></form>
           {{/if}}
           </div>
-          <button type="button" class="btn btn-primary commentButton"><i class="fa fa-heart" aria-hidden="true"></i><span class="commentLike">{{this.likes.length}}</span></button>
+          <button data-od="{{this._id}}" class="btn btn-primary commentButton commentLike"><i class="fa fa-heart" aria-hidden="true"></i><span class="commentLikes">{{this.likes.length}}</span></button>
         </div>
   {{/each}}
       </div>
