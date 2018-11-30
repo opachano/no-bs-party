@@ -232,6 +232,11 @@ body {
   margin-top: 1vh; }
 
 @media only screen and (max-width: 600px) {
+  .postProfilePic {
+    width: 7vw;
+    height: 4vh; }
+  .username {
+    max-width: 90vw; }
   .logout {
     width: 85vw; }
   .message {
