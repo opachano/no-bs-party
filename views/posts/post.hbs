@@ -3,7 +3,8 @@
   {{#each post}}
   <div class="eachPost">
     <div class="postInfo">
-      <div class="username" >
+      <div class="username">
+        <img class="postProfilePic" src="{{this.user.image}}" alt="">
         <h3>{{this.title}}</h3>
         <p>@{{this.user.username}}</p>
       </div>
@@ -34,9 +35,7 @@
   <button type="button" class="btn btn-primary commentButton" data-toggle="modal" data-target="#modal{{this._id}}">
     Comments: {{this.comments.length}}
   </button>
-  {{!-- <form action="/post/{{this._id}}/like" method="POST"> --}}
   <button data-id="{{this._id}}" class="btn btn-primary commentButton postLike"><i class="fa fa-heart" aria-hidden="true"></i><span>{{this.likes.length}}</span></button>
-  {{!-- </form> --}}
 </div>
 <!-- Modal -->
 <div class="modal fade" id="modal{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">

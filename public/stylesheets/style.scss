@@ -69,12 +69,25 @@ body {
   margin-left: 1vw;
 }
 
+.username {
+  max-width: 60%;
+}
+
 .username > h3 {
  font-size: 20px;
 }
 
 .username > p {
   color: #bbb;
+}
+
+.postProfilePic { 
+  width: 2vw;
+  height: 3vh;
+  border-radius: 50%;
+  border: 0.5px solid #011319;
+  box-shadow: 0px 0px 1px 1px rgba(30,30,30,0.5);
+  background-color: #fff;
 }
 
 .postInfo > .firstName {
